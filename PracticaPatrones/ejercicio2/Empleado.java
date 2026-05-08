@@ -5,7 +5,9 @@ public abstract class Empleado {
 	// todos pueden responder a este mensaje calculandolo independientemente 
 	// con el resultado de cada uno de los metodos que devuelven lo indicado segun el empleado 
 	public double sueldo() {
-		return this.sueldoBasico() + this.calcularAdicionales() - this.calcularDescuentos();
+		return this.sueldoBasico() +
+			this.calcularAdicionales() - 
+			this.calcularDescuentos();
 	}
 	
 	protected abstract double sueldoBasico();
