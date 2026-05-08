@@ -3,19 +3,16 @@ package io.github.unlp_oo.archetype;
 import java.util.List;
 
 public class TopografiaMixta extends Topografia {
-
     private List<Topografia> partes;
 
-    public TopografiaMixta(List<Topografia> partes) {
-        if (partes.size() != 4) {
-            throw new RuntimeException("Debe tener 4 partes");
-        }
-        this.partes = partes;
+    public TopografiaMixta(List<Topografia> componentes) {
+        this.componentes = componentes;
     }
-
+    
+   @Override
     public double proporcionAgua() {
         return partes.stream()
-                .mapToDouble(Topografia::proporcionAgua)
+                .mapToDouble(p -> p.proporcionAgua() )
                 .sum() / 4;
     }
 
