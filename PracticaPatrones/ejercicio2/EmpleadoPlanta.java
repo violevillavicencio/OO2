@@ -1,14 +1,10 @@
 package io.github.unlp_oo.archetype;
 
-
-public class EmpleadoPlanta extends Empleado{
-	private boolean esCasado;
-	private int cantHijos;
+public class EmpleadoPlanta extends EmpleadoConFamilia{
 	private int aniosAntiguedad;
 	
 	public EmpleadoPlanta (boolean esCasado, int cantHijos, int aniosAntiguedad) {
-		this.esCasado = esCasado;
-		this.cantHijos = cantHijos;
+	    super(esCasado, cantHijos);
 		this.aniosAntiguedad = aniosAntiguedad;
 	}
 
@@ -17,10 +13,9 @@ public class EmpleadoPlanta extends Empleado{
 		return 50000;
 	}
 
-	@Override
-	public double calcularAdicionales() {
-		int adicional = 2000 * this.cantHijos + 2000 * this.aniosAntiguedad;
-		return esCasado ? 5000 + adicional : adicional;
-	}
-		
+    @Override
+    public double calcularAdicionales() {
+        return this.adicionalPorFamilia() +
+               this.aniosAntiguedad * 2000;
+    }
 }
