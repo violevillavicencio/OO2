@@ -1,14 +1,11 @@
 package io.github.unlp_oo.archetype;
 
-public class EmpleadoTemporario extends Empleado{
+public class EmpleadoTemporario extends EmpleadoConFamilia{
 	private int cantHorasTrabajadas;
-	private int cantHijos;
-	private boolean esCasado;
 	
 	public EmpleadoTemporario(int cantHorasTrabajadas, int cantHijos, boolean esCasado) {
+		super(esCasado, cantHijos);
 		this.cantHorasTrabajadas = cantHorasTrabajadas;
-		this.cantHijos = cantHijos;
-		this.esCasado = esCasado;
 	}
 
 	@Override
@@ -16,9 +13,9 @@ public class EmpleadoTemporario extends Empleado{
 		return 20000 + this.cantHorasTrabajadas * 300;
 	}
 
-	@Override
-	public double calcularAdicionales() {
-		return esCasado ? 5000 + (2000 * this.cantHijos) : 2000 * this.cantHijos;
-	}
+    @Override
+    public double calcularAdicionales() {
+        return this.adicionalPorFamilia();
+    }
 	
 }
