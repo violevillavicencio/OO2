@@ -8,55 +8,55 @@ public class GamerBuilder extends EquipoBuilder {
 
     @Override
     public void setProcesador() {
-        presupuesto.setProcesador(
+        presupuesto.addComponente(
             catalogo.getComponente("Procesador Gamer")
         );
-        presupuesto.setProcesador(
+        presupuesto.addComponente(
             catalogo.getComponente("Pad termico")
         );
 
-        presupuesto.setProcesador(
+        presupuesto.addComponente(
             catalogo.getComponente("Cooler")
         );
     }
 
     @Override
     public void setMemoriaRAM() {
-        presupuesto.setMemoriaRAM(
+        presupuesto.addComponente(
             catalogo.getComponente("32 GB")
         );
-        presupuesto.setMemoriaRAM(
+        presupuesto.addComponente(
             catalogo.getComponente("32 GB")
         );
     }
 
     @Override
     public void setDisco() {
-        presupuesto.setDisco(
+        presupuesto.addComponente(
             catalogo.getComponente("SSD 500 GB")
         );
-        presupuesto.setDisco(
+        presupuesto.addComponente(
             catalogo.getComponente("SSD 1 TB")
         );
     }
 
     @Override
     public void setTarjetaGrafica() {
-        presupuesto.setTarjetaGrafica(
+        presupuesto.addComponente(
             catalogo.getComponente("RTX 4090")
         );
     }
 
     @Override
     public void setGabinete() {
-        presupuesto.setGabinete(
+        presupuesto.addComponente(
             catalogo.getComponente("Gabinete Gamer")
         );
         
         double consumo = presupuesto.calcularConsumo();
 
         double fuenteNecesaria = consumo * 1.5;
-        presupuesto.setGabinete(
+        presupuesto.addComponente(
             catalogo.getComponente(
                 "Fuente " + fuenteNecesaria + " w"
             )
