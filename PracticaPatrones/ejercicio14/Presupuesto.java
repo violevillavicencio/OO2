@@ -15,22 +15,8 @@ public class Presupuesto {
 		this.fechaSolicitud = LocalDate.now();
 	}
 	
-	public void setProcesador(Componente componente) { 
-		componentes.add(componente);
-	}
-	
-	public void setMemoriaRAM(Componente componente) {
-		componentes.add(componente);
-	}	
-	public void setDisco(Componente componente) {
-		componentes.add(componente);
-	}
-	
-	public void setTarjetaGrafica(Componente componente) {
-		componentes.add(componente);
-	}
-	public void setGabinete(Componente componente) {
-		componentes.add(componente);
+	public void addComponente(Componente componente) {
+		componentes.add(componente); 
 	}
 	
 	public double calcularConsumo() {
@@ -43,6 +29,14 @@ public class Presupuesto {
 		return this.componentes.stream()
 				.mapToDouble(comp -> comp.getPrecio())
 				.sum();	
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public LocalDate getFechaSolicitud() {
+		return fechaSolicitud;
 	}
 
 }
