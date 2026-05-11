@@ -8,39 +8,39 @@ public class IntermedioBuilder extends EquipoBuilder {
 
     @Override
     public void setProcesador() {
-        presupuesto.setProcesador(
+        presupuesto.addComponente(
             catalogo.getComponente("Procesador Intermedio")
         );
     }
 
     @Override
     public void setMemoriaRAM() {
-        presupuesto.setMemoriaRAM(
+        presupuesto.addComponente(
             catalogo.getComponente("16 GB")
         );
     }
 
     @Override
     public void setDisco() {
-        presupuesto.setDisco(
+        presupuesto.addComponente(
             catalogo.getComponente("SSD 500 GB")
         );
     }
 
     @Override
     public void setTarjetaGrafica() {
-        presupuesto.setTarjetaGrafica(
+        presupuesto.addComponente(
             catalogo.getComponente("GTX 1650")
         );
     }
 
     @Override
     public void setGabinete() {
-        presupuesto.setGabinete(
+        presupuesto.addComponente(
             catalogo.getComponente("Gabinete Intermedio")
         );
 
-        presupuesto.setGabinete(
+        presupuesto.addComponente(
             catalogo.getComponente("Fuente 800w")
         );
     }
