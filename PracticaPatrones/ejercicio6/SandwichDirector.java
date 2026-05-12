@@ -4,6 +4,7 @@ public class SandwichDirector {
 	private SandwichBuilder builder;
 	
     public Sandwich construir(SandwichBuilder builder) {
+		this.builder = builder;
     	this.builder.buildPan();
         this.builder.buildAderezo();
         this.builder.buildPrincipal();
