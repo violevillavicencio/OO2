@@ -3,7 +3,7 @@ package io.github.unlp_oo.archetype;
 import java.util.List;
 
 // esta seria una clase q disponemos ya implementada
-public class HomeWeatherStation {
+public class HomeWeatherStation implements WeatherData {
 	
 	//retorna la temperatura en grados Fahrenheit. 
 	public double getTemperatura() {
